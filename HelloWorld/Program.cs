@@ -13,49 +13,44 @@ namespace HelloWorld
         {
             do
             {
-                string name = AskName();
-                uint age = AskAge();
-                string zodiacSign = AskZodiacSign();
+                string name = ReadName();
+                uint age = ReadAge();
+                string zodiacSign = ReadZodiacSign();
 
-                printResult(name, age, zodiacSign);
+                PrintResult(name, age, zodiacSign);
                 // Как лучше назвать функцию?
-            } while (isRepeat());
+            } 
+            while (IsRepeat());
         }
 
-        static bool isRepeat()
+        static bool IsRepeat()
         {
             Console.WriteLine("Еще разок?\n(для повтора нажмите любую клавишу. Если хотите завершить, то нажмите ESC");
             ConsoleKey input = Console.ReadKey().Key;
-            if (ConsoleKey.Escape != input)
-            {
-                Console.Clear();
-                return true;
-            }
             Console.Clear();
-            return false;
+            return ConsoleKey.Escape != input;
         }
 
-        static String AskName()
+        static String ReadName()
         {
             Console.WriteLine("Как вас зовут?");
             string name = Console.ReadLine();
+            string defaultName = "Виталий";
             if (name == "")
             {
-                Console.WriteLine("Вы ничего не написали! \n Тогда я вас назову: Виталий!");
+                Console.WriteLine($"Вы ничего не написали! \n Тогда я вас назову: {defaultName}!");
                 Console.ReadKey();
-                name = "Виталий";
+                name = defaultName;
             }
             Console.Clear();
             return name;
-
         }
-        static uint AskAge()
+        static uint ReadAge()
         {
-            const uint defaultAge = 25;
-            uint age = defaultAge;
-            
+            uint defaultAge = 25;
+            uint age;           
 
-            Console.WriteLine("Сколько вам лет?");
+            Console.WriteLine("Сколько вам полных лет?");
             string input = Console.ReadLine();
             bool isCorrectInput = uint.TryParse(input, out uint number);
             if (isCorrectInput)
@@ -65,34 +60,36 @@ namespace HelloWorld
             else
             {
                 Console.WriteLine("Вы сломали пространство и время! \n Или мы не можем понять ваш ответ!");
-                Console.WriteLine("Мы думаем, что вам 25 лет!");
+                Console.WriteLine($"Мы думаем, что вам {defaultAge} лет!");
+                age = defaultAge;
                 Console.ReadKey();
             }
             Console.Clear();
             return age;
-
         }
 
-        static string AskZodiacSign()
+        static string ReadZodiacSign()
         {
             string zodiacSign;
+            string defaultZodiacSign = "Овен";
             Console.WriteLine("Кто вы по знаку зодиака?");
             zodiacSign = Console.ReadLine();
             if (zodiacSign == "") 
             {
-                Console.WriteLine("Вы все сломали! Значит вы ОВЕН!");
+                Console.WriteLine($"Вы все сломали! Значит вы {defaultZodiacSign}!");
                 Console.ReadKey();
+
                 // Можно ли считать ЭТО магическим значением?
-                zodiacSign = "Овен";
+                zodiacSign = defaultZodiacSign;
             }
             Console.Clear();
             
             return zodiacSign;
         }
 
-        static void printResult(string name, uint age, string zodiacSign)
+        static void PrintResult(string name, uint age, string zodiacSign)
         {
-            const uint impossibleAge = 1000;
+            uint impossibleAge = 1000;
             Console.Clear();
             Console.WriteLine("Добрый день, " + name);
             Console.WriteLine($"Вам {age} лет!");
@@ -100,9 +97,7 @@ namespace HelloWorld
             {
                 Console.WriteLine("Мы всегда рады пришельцам!)");
             }
-            Console.WriteLine("Ваш зна зодиака: " + zodiacSign);
-
-            
+            Console.WriteLine("Ваш зна зодиака: " + zodiacSign);   
         }
     }
 }
