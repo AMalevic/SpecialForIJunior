@@ -1,0 +1,7 @@
+E:\CSharpWorks\IJunior\SpecialForIJunior\HelloWorld\bin\Debug\HelloWorld.exe.config
+E:\CSharpWorks\IJunior\SpecialForIJunior\HelloWorld\bin\Debug\HelloWorld.exe
+E:\CSharpWorks\IJunior\SpecialForIJunior\HelloWorld\bin\Debug\HelloWorld.pdb
+E:\CSharpWorks\IJunior\SpecialForIJunior\HelloWorld\obj\Debug\exercise4.csproj.AssemblyReference.cache
+E:\CSharpWorks\IJunior\SpecialForIJunior\HelloWorld\obj\Debug\exercise4.csproj.CoreCompileInputs.cache
+E:\CSharpWorks\IJunior\SpecialForIJunior\HelloWorld\obj\Debug\HelloWorld.exe
+E:\CSharpWorks\IJunior\SpecialForIJunior\HelloWorld\obj\Debug\HelloWorld.pdb
