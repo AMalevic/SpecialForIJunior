@@ -18,7 +18,6 @@ namespace HelloWorld
                 string zodiacSign = ReadZodiacSign();
 
                 PrintResult(name, age, zodiacSign);
-                // Как лучше назвать функцию?
             } 
             while (IsRepeat());
         }
@@ -79,7 +78,6 @@ namespace HelloWorld
                 Console.WriteLine($"Вы все сломали! Значит вы {defaultZodiacSign}!");
                 Console.ReadKey();
 
-                // Можно ли считать ЭТО магическим значением?
                 zodiacSign = defaultZodiacSign;
             }
             Console.Clear();
