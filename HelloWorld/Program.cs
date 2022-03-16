@@ -11,34 +11,30 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            // Задание 2.
-            //ConsoleKeyInfo input = Console.ReadKey();
-            //string text = "Съешь еще этих мягких французских булок..."; 
-            //uint life = 100;
-            //bool isAlive = true;
-            //float damageFist = 10.5f;
-            //char symbol = 'a';
-            //int laps = 1;
-            //double xPosition = 233214.4324;
-            //ulong gold = 18446744073709551615;
-            //ushort experience = 41214;
+            do
+            {
+                string name = AskName();
+                uint age = AskAge();
+                string zodiacSign = AskZodiacSign();
 
-            //Задание 4.
-
-            Run();
+                printResult(name, age, zodiacSign);
+                // Как лучше назвать функцию?
+            } while (isRepeat());
         }
 
-        static void Run()
+        static bool isRepeat()
         {
-            string name = AskName();
-            uint age = AskAge();
-            string zodiacSign = AskZodiacSign();
-
-            SayHello(name, age, zodiacSign);
-
+            Console.WriteLine("Еще разок?\n(для повтора нажмите любую клавишу. Если хотите завершить, то нажмите ESC");
+            ConsoleKey input = Console.ReadKey().Key;
+            if (ConsoleKey.Escape != input)
+            {
+                Console.Clear();
+                return true;
+            }
+            Console.Clear();
+            return false;
         }
 
-        // Задел для проверки ввода. Можно сделать первую букву большой.
         static String AskName()
         {
             Console.WriteLine("Как вас зовут?");
@@ -55,60 +51,58 @@ namespace HelloWorld
         }
         static uint AskAge()
         {
-            uint age = 25;
+            const uint defaultAge = 25;
+            uint age = defaultAge;
+            
+
             Console.WriteLine("Сколько вам лет?");
-            try
+            string input = Console.ReadLine();
+            bool isCorrectInput = uint.TryParse(input, out uint number);
+            if (isCorrectInput)
             {
-                age = Convert.ToUInt32(Console.ReadLine());
+                age = number;
             }
-            catch
+            else
             {
                 Console.WriteLine("Вы сломали пространство и время! \n Или мы не можем понять ваш ответ!");
                 Console.WriteLine("Мы думаем, что вам 25 лет!");
                 Console.ReadKey();
-                age = 25;
             }
             Console.Clear();
             return age;
 
         }
 
-        // Ничего не придумал. Может потом дополню) 
         static string AskZodiacSign()
         {
             string zodiacSign;
             Console.WriteLine("Кто вы по знаку зодиака?");
-            try {
-                zodiacSign = Console.ReadLine();
-            }
-            catch
+            zodiacSign = Console.ReadLine();
+            if (zodiacSign == "") 
             {
-                Console.WriteLine("Вы все сломали! Значит в ОВЕН!");
+                Console.WriteLine("Вы все сломали! Значит вы ОВЕН!");
+                Console.ReadKey();
+                // Можно ли считать ЭТО магическим значением?
                 zodiacSign = "Овен";
             }
-
             Console.Clear();
             
             return zodiacSign;
         }
 
-        static void SayHello(string name, uint age, string zodiacSign)
+        static void printResult(string name, uint age, string zodiacSign)
         {
+            const uint impossibleAge = 1000;
             Console.Clear();
             Console.WriteLine("Добрый день, " + name);
             Console.WriteLine($"Вам {age} лет!");
-            if (age > 1000)
+            if (age > impossibleAge)
             {
                 Console.WriteLine("Мы всегда рады пришельцам!)");
             }
             Console.WriteLine("Ваш зна зодиака: " + zodiacSign);
 
-            Console.WriteLine("Еще разок?\n(для повтора нажмите любую клавишу. Если хотите завершить, то нажмите ESC");
-            ConsoleKey input = Console.ReadKey().Key;
-            if (ConsoleKey.Escape != input)
-            {
-                Run();
-            }
+            
         }
     }
 }
