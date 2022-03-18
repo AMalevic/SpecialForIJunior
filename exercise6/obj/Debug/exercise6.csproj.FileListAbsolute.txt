@@ -4,3 +4,4 @@ E:\CSharpWorks\IJunior\SpecialForIJunior\exercise6\bin\Debug\exercise6.pdb
 E:\CSharpWorks\IJunior\SpecialForIJunior\exercise6\obj\Debug\exercise6.csproj.CoreCompileInputs.cache
 E:\CSharpWorks\IJunior\SpecialForIJunior\exercise6\obj\Debug\exercise6.exe
 E:\CSharpWorks\IJunior\SpecialForIJunior\exercise6\obj\Debug\exercise6.pdb
+E:\CSharpWorks\IJunior\SpecialForIJunior\exercise6\obj\Debug\exercise6.csproj.AssemblyReference.cache

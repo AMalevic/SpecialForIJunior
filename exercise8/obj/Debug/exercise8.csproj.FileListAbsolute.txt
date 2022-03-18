@@ -1,0 +1,7 @@
+E:\CSharpWorks\IJunior\SpecialForIJunior\exercise8\bin\Debug\exercise8.exe.config
+E:\CSharpWorks\IJunior\SpecialForIJunior\exercise8\bin\Debug\exercise8.exe
+E:\CSharpWorks\IJunior\SpecialForIJunior\exercise8\bin\Debug\exercise8.pdb
+E:\CSharpWorks\IJunior\SpecialForIJunior\exercise8\obj\Debug\exercise8.csproj.CoreCompileInputs.cache
+E:\CSharpWorks\IJunior\SpecialForIJunior\exercise8\obj\Debug\exercise8.exe
+E:\CSharpWorks\IJunior\SpecialForIJunior\exercise8\obj\Debug\exercise8.pdb
+E:\CSharpWorks\IJunior\SpecialForIJunior\exercise8\obj\Debug\exercise8.csproj.AssemblyReference.cache

@@ -12,12 +12,12 @@ namespace exercise6
         {
             uint artСounter = 52;
             uint rowLimit = 3;
-            uint lineСounter;
+            uint fullLineСounter;
             uint remainder;
 
-            lineСounter = artСounter / rowLimit;
+            fullLineСounter = artСounter / rowLimit;
             remainder = artСounter % rowLimit;
-            Console.WriteLine($"Заполненых рядов: {lineСounter}\n Излишек: {remainder}");
+            Console.WriteLine($"Заполненых рядов: {fullLineСounter}\n Излишек: {remainder}");
             Console.ReadKey();
         }
     }
